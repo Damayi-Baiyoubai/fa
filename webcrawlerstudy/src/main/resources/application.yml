@@ -1,0 +1,12 @@
+spring:
+ datasource:
+  username: root
+  password: ace45de
+  url: jdbc:mysql://localhost:3306/fa
+  driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+ config-location: classpath:mybatis/mabatis_config.xml
+ mapper-locations: classpath:mybatis/mapper/*.xml
+logging:
+ level:
+  com.example.webcrawlerstudy.service: debug
