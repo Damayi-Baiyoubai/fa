@@ -1,13 +1,11 @@
 package com.example.webcrawlerstudy;
 
-import com.example.webcrawlerstudy.dao.CardMapper;
+
 import com.example.webcrawlerstudy.dao.NewsMapper;
 import com.example.webcrawlerstudy.dataobject.*;
 import com.example.webcrawlerstudy.service.Crawler;
 import com.example.webcrawlerstudy.service.ElementReader;
 import com.example.webcrawlerstudy.service.NewsService;
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
-import net.minidev.json.JSONUtil;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,17 +18,12 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.*;
 
 
 @SpringBootTest
 class WebcrawlerstudyApplicationTests {
     Logger logger = LoggerFactory.getLogger(this.getClass());
-    @Autowired
-    Person person;
-    @Autowired
-    CardMapper cardMapper;
     @Autowired
     NewsService newsService;
     @Autowired
@@ -182,6 +175,11 @@ class WebcrawlerstudyApplicationTests {
         URL url = new URL(
                 "https://mbd.baidu.com/newspage/data/landingsuper?context=%7B%22nid%22%3A%22news_9327720002366507338%22%7D&n_type=1&p_from=4");
         News news = newsService.read(url);
+
+        URL url2 = new URL(
+                "https://mbd.baidu.com/newspage/data/landingsuper?context=%7B%22nid%22%3A%22news_8487848514753656240%22%7D&n_type=1&p_from=3");
+        News news2 = newsService.read(url2);
         System.out.println(news);
+        System.out.println(news2);
     }
 }

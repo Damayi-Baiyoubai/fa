@@ -14,6 +14,18 @@ public class News {
     String content = null;
     List<String> sonUrlPathes = new ArrayList<>();
 
+    public News() {
+    }
+
+    public News(News news) {
+        this.urlPath = news.urlPath;
+        this.title = news.title;
+        this.author = news.author;
+        this.time = news.time;
+        this.content = news.content;
+        this.sonUrlPathes = news.sonUrlPathes;
+    }
+
     @Override
     public String toString() {
         return "News{" +

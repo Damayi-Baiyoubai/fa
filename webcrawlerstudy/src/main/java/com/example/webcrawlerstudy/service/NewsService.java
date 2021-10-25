@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 public class NewsService {
     ElementReader elementReader = new ElementReader();
-    News news = new News();
+    News news = null;
     @Autowired
     NewsMapper newsMapper;
 
@@ -37,6 +37,7 @@ public class NewsService {
     }
 
     public void assignNews(URL url) {
+        news = new News();
         elementReader.read();
         news.setUrlPath(url.toString());
         List<ElementInfo> elementInfoList = elementReader.getElementInfoList();

@@ -109,6 +109,9 @@ public class ElementReader {
     }
 
     public List<ElementInfo> read(){
+        if(!elementInfoList.isEmpty()){
+            elementInfoList.clear();
+        }
         List<ElementInfo> elementInfoes = this.getElementInfoes();
         this.setElementInfoesContent(elementInfoes);
         return elementInfoes;
