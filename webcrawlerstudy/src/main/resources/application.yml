@@ -9,4 +9,4 @@ mybatis:
  mapper-locations: classpath:mybatis/mapper/*.xml
 logging:
  level:
-  com.example.webcrawlerstudy.service: error
+  com.example.webcrawlerstudy.service: info

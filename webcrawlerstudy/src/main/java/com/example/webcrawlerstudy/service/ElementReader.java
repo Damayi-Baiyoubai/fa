@@ -19,6 +19,15 @@ public class ElementReader {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     private StringBuilder htmlContent;
     private List<ElementInfo> elementInfoList = new ArrayList<>();
+    private List<ElementLabel> elementLabelList = new ArrayList<>();
+
+    public List<ElementLabel> getElementLabelList() {
+        return elementLabelList;
+    }
+
+    public void setElementLabelList(List<ElementLabel> elementLabelList) {
+        this.elementLabelList = elementLabelList;
+    }
 
     public StringBuilder getHtmlContent() {
         return htmlContent;
@@ -63,7 +72,7 @@ public class ElementReader {
     }
 
     public List<ElementLabel> getAllElementLabel() {
-        List<ElementLabel> elementLabelList = new LinkedList<>();
+        elementLabelList = new LinkedList<>();
         for (int index = 0; index < htmlContent.length(); index++) {
             if (htmlContent.charAt(index) == '<') {
                 index++;
@@ -111,6 +120,9 @@ public class ElementReader {
     public List<ElementInfo> read(){
         if(!elementInfoList.isEmpty()){
             elementInfoList.clear();
+        }
+        if(!elementLabelList.isEmpty()){
+            elementLabelList.clear();
         }
         List<ElementInfo> elementInfoes = this.getElementInfoes();
         this.setElementInfoesContent(elementInfoes);
